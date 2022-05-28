@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    /* on this step things went much prettier! */
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 30px 5% 0;
+    z-index: 100;
+}
+
+.logo {
+    width: 140px;
+    cursor: pointer;
+}
+
+.menu {
+    width: 30px;
+    cursor: pointer;
+}
+
+nav ul {
+    /* flex: 1; */
+    /* flex-grow: 1;
+    flex-shrink: 10;
+    flex-basis: 0; */
+    position: absolute;
+    right: 37%;
+    transform: translateX(50%)
+        /* text-align: right; */
+        /* margin-right: 150px; */
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 32px;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+
+.left-col {
+    flex-basis: 62%;
+    padding: 10% 5% 0;
+}
+
+.right-col {
+    flex-basis: 38%;
+    padding: 10% 3% 0;
+    background: rgba(71, 0, 204, 0.6);
+    position: relative;
+}
+
+.back-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    /* -o-object-fit: cover; */
+    object-fit: cover;
+    z-index: -100;
+}
+
+.left-col h1 {
+    color: #444;
+    font-size: 45px;
+    padding-left: 60px;
+    position: relative;
+}
+
+.left-col h1::before {
+    content: '';
+    background: #0011db;
+    height: 80%;
+    width: 8px;
+    border-radius: 5px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    /* transform: rotate(30deg); */
+}
+
+.right-col h3 {
+    color: #fff;
+    font-weight: 500;
+    padding-left: 50px;
+    position: absolute;
+    bottom: 120px;
+}
+
+.right-col h3::before {
+    content: '';
+    background: #fff;
+    height: 100%;
+    width: 6px;
+    border-radius: 5px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    /* transform: rotate(30deg); */
+}
+
+.play-icon {
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.team {
+    font-family: sans-serif;
+    /* font-size: 40px; */
+    width: 100%;
+    /* min-height: 100vh; */
+
+    display: grid;
+    gap: 20px;
+
+
+    /* padding-left: 10%;
+    padding-right: 10%; */
+
+    margin-top: 80px;
+}
+
+[class^="box-"] {
+    /* background-color: #8d83835e; */
+    /* Размещаем контейнеры по центру */
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.box-1 {
+    grid-area: A;
+    /* color: rgb(223, 151, 19); */
+
+}
+
+.box-2 {
+    grid-area: B;
+    /* color: rgb(189, 127, 14); */
+}
+
+.box-3 {
+    grid-area: C;
+    /* color: rgb(189, 127, 14); */
+}
+
+
+
+
+/* 
+.team {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80px;
+} */
+
+.user-col {
+    /* flex-basis: 27%; */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 1s;
+    position: relative;
+}
+
+.user-col img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.info {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.info p {
+    color: #555;
+    font-weight: 600;
+}
+
+.user-col:hover .info {
+    opacity: 0.8;
+}
+
+.user-col:hover {
+    transform: translateY(-30px);
+}
+
+.user-col .arrow-icon {
+    width: 50px;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 1s;
+}
+
+.user-col:hover .arrow-icon {
+    opacity: 0;
+}
+
+.white-menu {
+    color: white;
+}
+
+@media (max-width:600px) {
+    
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    nav ul {
+        display: flex;
+        margin-right: 0;
+        width: 100%;
+        transform: none;
+        right: 0;
+        position: absolute;
+        font-size: 1.0em;
+    }
+
+    nav ul li {
+        flex-grow: 1;
+        text-align: center;
+        color: #fff;
+        margin-right:0;
+        margin-left:0;
+    }
+
+    nav ul li a {
+        color: white;
+    }
+
+    .logo {
+        transform: translate(30px, 50px);
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    .team {
+        grid-template-areas:
+            "A"
+            "B"
+            "C";
+    }
+
+    .left-col h1 {
+        color: #444;
+        font-size: 25px;
+        padding-left: 50px;
+        position: relative;
+    }
+
+    .right-col {
+        height: 70vh;
+        flex-basis: auto;
+    }
+
+
+    .left-col, .right-col {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .right-col h3 {
+        color: #fff;
+        font-weight: 500;
+        padding-left: 50px;
+        position: absolute;
+        bottom: 30px;
+        padding-right: 10%;
+    }
+}
+
+@media (min-width:600px) {
+    .team {
+        grid-template-areas:
+            "A A B B"
+            ". C C .";
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .left-col {
+        padding: 20% 5% 0;
+    }
+
+    .left-col h1 {
+        font-size: 35px;
+    }
+
+    nav ul li {
+        margin: 0 12px;
+        font-size: 0.9em;
+    }
+
+    nav ul li.services {
+        margin-left:40px;
+    }
+
+    b
+
+}
+
+@media (min-width:750px) {
+    nav ul li {
+        margin: 0 22px;
+        font-size: 1.0em;
+    }
+
+    .right-col h3 {
+        color: #fff;
+        font-weight: 500;
+        padding-left: 50px;
+        position: absolute;
+        bottom: 280px;
+        margin-right: 50px;
+    }
+}
+
+
+@media (min-width:900px) {
+
+    .left-col {
+        padding: 150px 5% 0;
+    }
+
+    .team {
+        grid-template-areas:
+            "A B C";
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .right-col h3 {
+        color: #fff;
+        font-weight: 500;
+        padding-left: 50px;
+        position: absolute;
+        bottom: 120px;
+        margin-right: 50px;
+    }
+}
+
+@media (min-width:1000px) {
+    nav ul li {
+        margin: 0 42px;
+        font-size: 1.0em;
+    }
+}

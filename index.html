@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>G agency website</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav>
+        <img src="images/logo.png" class="logo" alt="logo.png">
+        <ul>
+            <li><a href="">About us</a></li>
+            <li><a href="">Clients</a></li>
+            <li class="services"><a href="" class="white-menu">Services</a></li>
+            <li><a href="" class="white-menu">Contact us</a></li>
+        </ul>
+        <!-- <img src="images/menu.png" class="menu"> -->
+    </nav>
+    <!-- your content here... -->
+    <div class="container">
+        <div class="left-col">
+            <h1>Helping<br> your business</h1>
+            <div class="team">
+                <div class="user-col box-1">
+                    <img src="images/image-1.png" alt="anthony.png">
+                    <div class="info">
+                        <h4>ANTHONY</h4>
+                        <p>TECH</p>
+                    </div>
+                    <img src="images/arrow.png" alt="" class="arrow-icon">
+                </div>
+                <div class="user-col box-2">
+                    <img src="images/image-2.png" alt="joseph.png">
+                    <div class="info">
+                        <h4>JOSEPH</h4>
+                        <p>HR</p>
+                    </div>
+                    <img src="images/arrow.png" alt="" class="arrow-icon">
+                </div>
+                <div class="user-col box-3">
+                    <img src="images/image-3.png" alt="richie.png">
+                    <div class="info">
+                        <h4>RICHIE</h4>
+                        <p>DEV</p>
+                    </div>
+                    <img src="images/arrow.png" alt="" class="arrow-icon">
+                </div>
+            </div>
+        </div>
+        <div class="right-col">
+            <video autoplay loop muted class="back-video">
+                <source src="images/video.mp4" type="video/mp4">
+            </video>
+            <img id="play-pause" src="images/pause-button.png" class="play-icon" onclick="control_video()" data-state="play" alt="play">
+            <h3>We're the world's leading marketing agency in the USA</h3>
+        </div>
+    </div>
+    <script>
+        function control_video() {
+            console.log("pressed!");
+            let imghandle = document.getElementById('play-pause');
+            let videoEl = document.getElementsByTagName('video')[0];
+            if (imghandle.dataset.state === "play") {
+                imghandle.dataset.state = 'pause';
+                imghandle.src = "images/play-button.png";
+                videoEl.pause();
+            } else {
+                imghandle.dataset.state = 'play';
+                imghandle.src = "images/pause-button.png";
+                videoEl.play();
+            }
+        }
+    </script>
+</body>
+</html>
